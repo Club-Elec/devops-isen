@@ -150,17 +150,28 @@
 						<img src="https://lh4.googleusercontent.com/-X1VVNh7EDRM/VIck4odR7yI/AAAAAAAAA9w/pOd7adeT0E8/w600-h282-no/micro-service-architecture.png">
 					</section>
 
-
 					<section>
 						<h4>Avantages des micros-services</h4>
 						<ul>
 							<li>Un micro-service possède un rôle</li>
 							<li>Faible nombre de lignes</li>
 							<li>S'utilise très facilement dans un conteneur</li>
-							<li>Brique de communication standard (généralement HTTP)</li>
+							<li>Brique de communication standard (généralement HTTPS)</li>
 							<li>Coût minimal de réécriture</li>
 							<li>scalabilité facilité</li>
+							<li>On peut utiliser le language qu'on veut</li>
 						</ul>
+					</section>
+
+					<section>
+						<h4>Désavantages des micros-services</h4>
+						<ul>
+							<li>Pas facile à débugguer</li>
+							<li>Demande une plateforme complète</li>
+						</ul>
+						<p>
+							<iframe src="//giphy.com/embed/vusDfI9BfkwY8" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/vusDfI9BfkwY8"></a></p>
+						</p>
 					</section>
 
 					<section>
@@ -226,15 +237,30 @@
 
 					<section>
 						<h4>Faire tourner une application revient à:</h4>
-						<p style="text-align:left">
-							<blockquote>$ git remote add clever git+ssh://git@push.clever-cloud.com/app_4e2ab.git</blockquote>
-							<blockquote>$ git push clever master</blockquote>
-						</p>
+						<blockquote>$ git remote add clever git+ssh://git@push.clever-cloud.com/app_4e2ab.git</blockquote>
+						<blockquote>$ git push clever master</blockquote>
 					</section>
 
 					<section>
 						<h4>Demo time</h4>
 						<img src="http://i.imgur.com/BFNjxLF.gif">
+					</section>
+
+					<section>
+						<h4>TL;DR</h4>
+						<ul>
+							<li>Le cloud est adapté à l'informatique d'aujourd'hui</li>
+							<li><b>Mais</b> il faut designer les applications en fonction:</li>
+							<li>
+								<ul>
+									<li>Encapsuler son application (container/VM)</li>
+									<li>Ne pas utiliser le FS</li>
+									<li>Ne pas mettre de configurations dans le code</li>
+									<li>Fragmenter son application en micro-services</li>
+									<li>Utiliser des queues dès que possible</li>
+								</ul>
+							</li>
+						</ul>
 					</section>
 
 					<section>
@@ -246,6 +272,12 @@
 							<li><a href="https://www.youtube.com/watch?v=aIxNm5Eed_8&list=PLMW8Xq7bXrG4pl13YVsKkaAUDeLdnrEQZ">Everything I learned about dynamic scaling of cloud apps</a></li>
 							<li><a href="https://www.ovh.com/fr/images/news/cookbook/cookbook-fr.pdf">Case Studies Book d’OVH.com</a></li>
 						</ul>
+					</section>
+
+					<section>
+						<h2>That's all folks</h2>
+						<h4>Do you have questions?</h4>
+						<iframe src="//giphy.com/embed/Bp5dwyOW9BwbK" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/Bp5dwyOW9BwbK"></a></p>
 					</section>
 
 					<section>
@@ -281,6 +313,9 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
+			Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: 'c/t' });
 
 		</script>
 
