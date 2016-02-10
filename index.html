@@ -164,25 +164,55 @@
 					</section>
 
 					<section>
-						<h2>Comme l'électricité</h2>
-						<iframe src="//giphy.com/embed/JsDS4fLaKluCs" width="480" height="325" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pokemon-electricity-pikachu-JsDS4fLaKluCs"></a></p>
-					</section>
-
-					<section>
-						<h2>Back to reality</h2>
-						<img src="http://i.imgur.com/wTh2JFI.gif?1826b3">
-					</section>
-
-					<section>
-						<h2>Back to reality</h2>
-						<img src="http://cyberwarzone.com/wp-content/uploads/2014/12/Server-blessing-Poland.jpg" style="height:500px">
+						<h4>Fournisseur de cloud</h4>
+						<ul>
+							<li>Plateform As a Service (PaaS): Clever-Cloud, AWS Elastic Beanstalk, Heroku, Google App Engine</li>
+							<li>Container As a Service (CaaS): Google Container Engine, Cloud.docker.com, etc...</li>
+							<li>Infrastructure As a Service (IaaS): Amazon EC2, Windows Azure, Rackspace, OVH, Digital Ocean, etc...</li>
+						</ul>
 					</section>
 					
 					<section>
-						<h2>back to reality</h2>
-						<img src="http://i.imgur.com/BgA31Jt.gif?1826b3">
+						<h4>Le gros plus: l'open-source</h4>
+						<ul>
+							<li>Plateform As a Service (PaaS): OpenShift, Cloud Foundry, Deis</li>
+							<li>Container As a Service (CaaS): Kubernetes</li>
+							<li>Infrastructure As a Service (IaaS): OpenStack</li>
+						</ul>
 					</section>
 
+					<section>
+						<h2>Comme l'électricité</h2>
+						<img src="http://www.rebootillinois.com/wp-content/uploads/2014/11/nuclear-power.gif">
+					</section>
+
+					<section>
+						<h2>Back to reality</h2>
+						<iframe src="//giphy.com/embed/iZuLdzQ5eoD1C" width="480" height="422" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nuclear-smoke-stack-explosion-iZuLdzQ5eoD1C"></a></p>
+					</section>
+
+					<section>
+						<h2>L'équipe dev</h2>
+						<img src="http://ljdchost.com/ibb9r509E89ayu.gif">
+					</section>
+
+					<section>
+						<h2>L'équipe déploiement</h2>
+						<img src="http://cyberwarzone.com/wp-content/uploads/2014/12/Server-blessing-Poland.jpg" style="height:500px">
+					</section>
+
+					<section>
+						<h2>Le soft plante:</h2>
+						<h4>La réaction du dev</h4>
+						<img src="http://49.media.tumblr.com/961b4c21a47d14401b2496d56f9de971/tumblr_nd6biiRvYB1tk3tedo1_500.gif">
+					</section>
+
+					<section>
+						<h2>Le soft plante:</h2>
+						<h4>La réaction de l'ops</h4>
+						<img width="600px" src="http://45.media.tumblr.com/f6d9539ae5b12d89681cb309cdf93da1/tumblr_ncetl1HbXA1tk3tedo1_400.gif">
+					</section>
+					
 					<section>
 						<h2>L'informatique n'est pas industrialisée</h2>
 						<iframe src="//giphy.com/embed/705UedqNZtIDm" width="480" height="268" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/devopsreactions-705UedqNZtIDm"></a></p>
@@ -191,6 +221,27 @@
 					<section>
 						<h2>Packaging is the solution</h2>
 						<img src="http://core0.staticworld.net/images/article/2014/05/large-container-vessel-ship-and-horizon-101123905-100265343-primary.idge.jpg">
+					</section>
+
+					<section>
+						<h4>Exemple: Dockerfile</h4>
+						<pre><code class="Dockerfile" data-trim contenteditable>
+FROM debian:jessie
+
+MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
+
+ENV NGINX_VERSION 1.9.10-1~jessie
+
+RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
+	&& echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list \
+	&& apt-get update \
+	&& apt-get install -y ca-certificates nginx=${NGINX_VERSION} gettext-base \
+	&& rm -rf /var/lib/apt/lists/*
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
+						</code></pre>
 					</section>
 
 					<section>
